@@ -10,15 +10,9 @@ Rustrivia is an interactive, Jeopardy-style trivia game designed to make learnin
 - Web-compatible thanks to wasm-bindgen
 - Customizable categories and questions
 
-3. Serve the `index.html` file using your preferred local server.
-
-## Usage
-
-Open the game in your web browser and start playing! Select categories and point values to reveal questions about Rust programming concepts.
-
 ## Contributing
 
-We welcome contributions! Please feel free to submit pull requests, create issues, or suggest new features.
+Contributions are welcomed, please feel free to submit pull requests, create issues, or suggest new features.
 
 ## License
 
