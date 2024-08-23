@@ -1,40 +1,33 @@
-# Slint Rust Template
+# Rustrivia: A Jeopardy-style Rust Learning Game
 
-A template for a Rust application that's using [Slint](https://slint.rs) for the user interface.
+Rustrivia is an interactive, Jeopardy-style trivia game designed to make learning Rust programming fun and engaging. Built with Rust, Slint for the UI, and wasm-bindgen for web compatibility, this game offers a unique way to test and expand your Rust knowledge.
 
-## About
+## Features
 
-This template helps you get started developing a Rust application with Slint as toolkit
-for the user interface. It demonstrates the integration between the `.slint` UI markup and
-Rust code, how to trigger react to callbacks, get and set properties and use basic widgets.
+- Jeopardy-style game board with Rust-themed categories
+- Interactive UI built with Slint
+- Smooth animations and transitions
+- Web-compatible thanks to wasm-bindgen
+- Customizable categories and questions
+
+3. Serve the `index.html` file using your preferred local server.
 
 ## Usage
 
-1. Install Rust by following the [Rust Getting Started Guide](https://www.rust-lang.org/learn/get-started).
-   Once this is done, you should have the ```rustc``` compiler and the ```cargo``` build system installed in your path.
-2. Install [`cargo-generate`](https://github.com/cargo-generate/cargo-generate)
-    ```
-    cargo install cargo-generate
-    ```
-3. Set up a sample project with this template
-    ```
-    cargo generate --git https://github.com/slint-ui/slint-rust-template --name my-project
-    cd my-project
-    ```
-3. Build with cargo
-    ```
-    cargo build
-    ```
-4. Run the application binary
-     ```
-     cargo run
-     ```
+Open the game in your web browser and start playing! Select categories and point values to reveal questions about Rust programming concepts.
 
-We recommend using an IDE for development, along with our [LSP-based IDE integration for `.slint` files](https://github.com/slint-ui/slint/blob/master/tools/lsp/README.md). You can also load this project directly in [Visual Studio Code](https://code.visualstudio.com) and install our [Slint extension](https://marketplace.visualstudio.com/items?itemName=Slint.slint).
+## Contributing
 
-## Next Steps
+We welcome contributions! Please feel free to submit pull requests, create issues, or suggest new features.
 
-We hope that this template helps you get started and you enjoy exploring making user interfaces with Slint. To learn more
-about the Slint APIs and the `.slint` markup language check out our [online documentation](https://slint.dev/docs).
+## License
 
-Don't forget to edit this README to replace it by yours
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- The Rust community for their invaluable resources.
+- Slint for providing an excellent UI framework.
+- The creators of wasm-bindgen for making WebAssembly integration seamless.
+
+Stay tuned for more updates as we continue to develop and expand Rustrivia!
