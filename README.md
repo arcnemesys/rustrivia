@@ -1,5 +1,5 @@
 # Rustrivia: A Jeopardy-style Rust Learning Game
-
+![A Rust themed Jeopardy board]("assets/rustrivia.png")
 Rustrivia is an interactive, Jeopardy-style trivia game designed to make learning Rust programming fun and engaging. Built with Rust, Slint for the UI, and wasm-bindgen for web compatibility, this game offers a unique way to test and expand your Rust knowledge.
 
 ## Features
