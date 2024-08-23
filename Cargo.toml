@@ -1,0 +1,15 @@
+[package]
+name = "rustrivia"
+version = "0.1.0"
+authors = ["arcnemesys <accelerenzo@proton.me>"]
+edition = "2021"
+build = "build.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+slint = "1.6"
+wasm-bindgen = "0.2.93"
+
+[build-dependencies]
+slint-build = "1.6"

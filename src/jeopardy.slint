@@ -1,0 +1,127 @@
+import {Button, VerticalBox, HorizontalBox} from "std-widgets.slint";
+
+struct Category {
+    name: string,
+    questions: [string]
+}
+
+
+struct CategoryTile {
+  value: string,
+  category: string,
+  clue: string,
+}
+
+component GameTile inherits Rectangle {
+  callback clicked;
+  callback selection-changed(bool);
+  in property <string> value;
+  in property <bool> answered: false;
+  in property <bool> selected: false;
+  in property <string> clue: "";
+  property <float> clue-opacity: 0;
+    width: 150px;
+    height: 100px;
+    background: answered ? #333333 : selected ? #ffd700 : #1390ff;
+  border-radius: 5px;
+  animate background { duration: 300ms;}
+    states [
+    selected when root.selected: {
+      root.clue-opacity: 1;
+    }
+    ]
+
+    Text {
+        text: root.selected ? root.value : "$" + root.value;
+        color: black;
+        font-size: 24px;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+     Text {
+        y: parent.height;
+        width: parent.width;
+        height: parent.height;
+        text: root.clue;
+        color: white;
+        font-size: 18px;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+        opacity: 0;
+        animate opacity { duration: 500ms; easing: ease-in-out; }
+    }
+}
+
+component JeopardyButton inherits Rectangle {
+    callback clicked;
+    in property <string> text;
+    in property <bool> answered: false;
+
+    width: 150px;
+    height: 100px;
+    background: answered ? #333333 : #1e90ff;
+
+    Text {
+        // Root refers to the outermost element of a component,
+        // which in this case is `JeopardyButton`.
+        text: root.text;
+        color: white;
+        font-size: 24px;
+    }
+
+    TouchArea {
+        clicked => {
+            root.clicked();
+        }
+    }
+}
+
+export component RustJeopardy inherits Window {
+    width: 880px;
+    height: 800px;
+    title: "Rustrivia";
+
+    in property <[Category]> categories: [
+        { name: "Syntax", questions: ["100", "200", "300", "400", "500"] },
+        { name: "Ownership", questions: ["100", "200", "300", "400", "500"] },
+        { name: "Traits", questions: ["100", "200", "300", "400", "500"] },
+        { name: "Concurrency", questions: ["100", "200", "300", "400", "500"] },
+        { name: "Ecosystem", questions: ["100", "200", "300", "400", "500"] },
+    ];
+
+    VerticalBox {
+        HorizontalBox {
+            Text {
+                text: "Rustrivia";
+                font-size: 36px;
+                font-weight: 700;
+                color: #ffd700;
+            }
+        }
+
+        HorizontalBox {
+            for category in categories: Rectangle {
+                width: 150px;
+                height: 50px;
+                background: #8b0000;
+                Text {
+                    text: category.name;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        for row in [0, 1, 2, 3, 4]: HorizontalBox {
+            for category in categories: JeopardyButton {
+                text: category.questions[row];
+                clicked => {
+                    debug("Selected:" + category.name + "for" + category.questions[row]);
+                }
+            }
+        }
+    }
+}
+
